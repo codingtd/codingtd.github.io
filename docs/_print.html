@@ -1,0 +1,713 @@
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.106.0"><link rel="canonical" type="text/html" href="http://codingtd.github.io/docs.html">
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
+
+<title>Learning devops | Codingtd学习笔记</title>
+<meta name="description" content="Codingtd学习笔记"><meta property="og:title" content="Learning devops" />
+<meta property="og:description" content="学习笔记
+" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://codingtd.github.io/docs.html" /><meta property="og:site_name" content="Codingtd学习笔记" />
+
+<meta itemprop="name" content="Learning devops">
+<meta itemprop="description" content="学习笔记
+"><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Learning devops"/>
+<meta name="twitter:description" content="学习笔记
+"/>
+
+
+
+
+<link rel="preload" href="/scss/main.min.615d1c2930cfe3ec0500f848c0ed474a2d54a9fb74bbaf899b8a57d8c7d97155.css" as="style">
+<link href="/scss/main.min.615d1c2930cfe3ec0500f848c0ed474a2d54a9fb74bbaf899b8a57d8c7d97155.css" rel="stylesheet" integrity="">
+
+
+<script
+  src="/local/code.jquery.com/jquery-3.5.1.min.js"
+  integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+  crossorigin="anonymous"></script>
+
+
+
+<link rel="stylesheet" href="/css/prism.css"/>
+
+
+
+
+
+  </head>
+  <body class="td-section">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="/">
+		<span class="navbar-logo"><svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 500" style="enable-background:new 0 0 500 500"><g><path style="fill:#fff" d="M116.8525 421.9722c-5.7041.0-10.3442-4.3127-10.3442-9.6129V88.183c0-5.3002 4.6401-9.6117 10.3442-9.6117H320.858c3.0347.0 9.3959.5498 11.7506 2.6302l.3545.3442 58.905 63.2912c2.3101 2.491 2.9202 8.4928 2.9202 11.3184v256.2039c0 5.3002-4.6407 9.6129-10.3436 9.6129H116.8525z"/><g><g><g><path style="fill:#767676" d="M384.4445 423.2066H116.852c-6.3839.0-11.5786-4.8658-11.5786-10.8474V88.1831c0-5.9804 5.1947-10.8461 11.5786-10.8461h204.0062c.377.0 9.2786.0329 12.568 2.9389l.3947.3833 58.9508 63.337c3.2135 3.4652 3.2514 11.7924 3.2514 12.1593v256.2036C396.0231 418.3408 390.8284 423.2066 384.4445 423.2066zM116.5079 411.9189c.0848.0278.1999.0531.3441.0531h267.5925c.1442.0.2581-.0253.3441-.0531V156.1556c-.0076-.9033-.3593-3.7347-.7034-5.0037l-57.6527-61.9416c-1.4651-.3176-4.4533-.6389-5.5742-.6389H116.852c-.143.0-.2594.024-.3441.0531V411.9189zm267.4533-261.149zM327.0321 89.371v.0013V89.371z"/></g></g></g><g><g><path style="fill:#5b7fc0" d="M189.0874 210.1754l.0012-.0012c7.7751.0012 15.0295 4.1862 18.932 10.9234 1.9177 3.3159 2.9305 7.1011 2.9293 10.9378.0 5.8394-2.2733 11.3304-6.4032 15.4604-4.1288 4.1288-9.6186 6.4032-15.458 6.4032s-11.328-2.2733-15.458-6.4032-6.4032-9.6186-6.4056-15.4628c.0012-6.025 2.454-11.4897 6.4116-15.4473C177.5953 212.627 183.0601 210.1742 189.0874 210.1754zm7.993 21.8576c.0012-1.4042-.3687-2.7868-1.063-3.9887-1.4293-2.4684-4.0833-3.9995-6.9299-4.0019-4.4077.0024-7.993 3.5877-7.993 7.993.0 2.1356.832 4.1431 2.3427 5.6539 1.5083 1.5083 3.5159 2.3403 5.6503 2.3415 2.1356.0 4.1443-.8308 5.6539-2.3403S197.0816 234.1722 197.0804 232.033z"/><path style="opacity:.3;fill:#fff" d="M189.0898 210.176c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3136 2.9377 7.0988 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8066-21.8612-21.8613.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 212.6276 183.0612 210.176 189.0898 210.176zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 236.239 197.0839 234.2399 197.0839 232.0372z"/><g><defs><path id="SVGID_1_" d="M194.7376 237.6875c-1.4461 1.4461-3.4452 2.3439-5.6479 2.3439-4.4077-.0024-7.9918-3.5865-7.9942-7.9942.0024-4.4125 3.5937-7.999 7.9942-7.9942 2.8443.0 5.497 1.5323 6.924 3.9983.6991 1.2067 1.0702 2.5881 1.0702 3.9959C197.0839 234.2399 196.1861 236.239 194.7376 237.6875z"/></defs><clipPath id="SVGID_2_"><use xlink:href="#SVGID_1_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_2_);fill:#fff" d="M190.0704 225.0237c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9546.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.663-2.8588-6.116.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C193.7885 225.7247 191.9774 225.0237 190.0704 225.0237z"/><path style="opacity:.13;clip-path:url(#SVGID_2_);fill:#020202" d="M190.0704 225.0237c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9546.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.663-2.8588-6.116.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C193.7885 225.7247 191.9774 225.0237 190.0704 225.0237z"/></g><g><defs><path id="SVGID_3_" d="M189.0898 210.176c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3136 2.9377 7.0988 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8066-21.8612-21.8613.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 212.6276 183.0612 210.176 189.0898 210.176zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 236.239 197.0839 234.2399 197.0839 232.0372z"/></defs><clipPath id="SVGID_4_"><use xlink:href="#SVGID_3_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_4_);fill:#5b7fc0" d="M172.6595 215.6045c-3.96 3.96-6.4116 9.4235-6.4116 15.452-.0024 12.0547 9.8066 21.8636 21.8613 21.8612 12.0547.0024 21.8636-9.797 21.8613-21.8612.0024-3.8475-1.0151-7.6326-2.9353-10.9462-3.8977-6.7324-11.1497-10.9151-18.926-10.9151C182.0806 209.1953 176.6171 211.647 172.6595 215.6045z"/></g></g><rect x="198.8952" y="225.1043" style="fill:#5b7fc0" width="122.6266" height="13.8671"/></g><g><path style="fill:#d95140" d="M189.0874 155.7611l.0012-.0012c7.7751.0012 15.0295 4.1862 18.932 10.9234 1.9177 3.3159 2.9305 7.1011 2.9293 10.9378.0 5.8394-2.2733 11.3304-6.4032 15.4604-4.1288 4.1288-9.6186 6.4032-15.458 6.4032s-11.328-2.2733-15.458-6.4032-6.4032-9.6186-6.4056-15.4628c.0012-6.0249 2.454-11.4897 6.4116-15.4473C177.5953 158.2128 183.0601 155.7599 189.0874 155.7611zm7.993 21.8577c.0012-1.4042-.3687-2.7868-1.063-3.9887-1.4293-2.4684-4.0833-3.9995-6.9299-4.0019-4.4077.0024-7.993 3.5877-7.993 7.993.0 2.1356.832 4.1431 2.3427 5.6539 1.5083 1.5083 3.5159 2.3403 5.6503 2.3415 2.1356.0 4.1443-.8308 5.6539-2.3403C196.2508 181.7667 197.0816 179.758 197.0804 177.6188z"/><path style="opacity:.3;fill:#fff" d="M189.0898 155.7617c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3135 2.9377 7.0987 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8066-21.8612-21.8613.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 158.2134 183.0612 155.7617 189.0898 155.7617zm7.9941 21.8613c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 181.8248 197.0839 179.8256 197.0839 177.623z"/><g><defs><path id="SVGID_5_" d="M194.7376 183.2733c-1.4461 1.4461-3.4452 2.3439-5.6479 2.3439-4.4077-.0024-7.9918-3.5865-7.9942-7.9942.0024-4.4125 3.5937-7.9989 7.9942-7.9942 2.8443.0 5.497 1.5323 6.924 3.9983.6991 1.2067 1.0702 2.5881 1.0702 3.9959C197.0839 179.8256 196.1861 181.8248 194.7376 183.2733z"/></defs><clipPath id="SVGID_6_"><use xlink:href="#SVGID_5_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_6_);fill:#fff" d="M190.0704 170.6095c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9546.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.663-2.8588-6.116.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C193.7885 171.3104 191.9774 170.6095 190.0704 170.6095z"/><path style="opacity:.13;clip-path:url(#SVGID_6_);fill:#020202" d="M190.0704 170.6095c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9546.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.663-2.8588-6.116.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C193.7885 171.3104 191.9774 170.6095 190.0704 170.6095z"/></g><g><defs><path id="SVGID_7_" d="M189.0898 155.7617c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3135 2.9377 7.0987 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8066-21.8612-21.8613.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 158.2134 183.0612 155.7617 189.0898 155.7617zm7.9941 21.8613c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 181.8248 197.0839 179.8256 197.0839 177.623z"/></defs><clipPath id="SVGID_8_"><use xlink:href="#SVGID_7_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_8_);fill:#d95140" d="M172.6595 161.1903c-3.96 3.96-6.4116 9.4235-6.4116 15.452-.0024 12.0547 9.8066 21.8636 21.8613 21.8613 12.0547.0024 21.8636-9.797 21.8613-21.8613.0024-3.8474-1.0151-7.6326-2.9353-10.9462-3.8977-6.7324-11.1497-10.9151-18.926-10.9151C182.0806 154.7811 176.6171 157.2327 172.6595 161.1903z"/></g><rect x="198.8952" y="170.69" style="fill:#d95140" width="122.6266" height="13.8671"/></g><g><g><path style="fill:#56a55c" d="M189.5379 264.6147l.0012-.0012c7.7751.0012 15.0294 4.1862 18.932 10.9235 1.9177 3.3159 2.9305 7.1011 2.9293 10.9378.0 5.8394-2.2733 11.3304-6.4032 15.4604-4.1288 4.1288-9.6186 6.4032-15.458 6.4032-5.8394.0-11.3281-2.2733-15.458-6.4032-4.13-4.13-6.4032-9.6186-6.4056-15.4628.0012-6.0249 2.454-11.4897 6.4116-15.4472C178.0458 267.0663 183.5105 264.6135 189.5379 264.6147zm7.993 21.8576c.0012-1.4042-.3687-2.7868-1.063-3.9887-1.4293-2.4684-4.0833-3.9995-6.9299-4.0019-4.4077.0024-7.993 3.5877-7.993 7.993.0 2.1356.832 4.1431 2.3427 5.6538 1.5083 1.5083 3.5159 2.3403 5.6503 2.3415 2.1356.0 4.1443-.8308 5.6539-2.3403C196.7013 290.6202 197.5321 288.6115 197.5309 286.4723z"/><path style="opacity:.3;fill:#fff" d="M189.5403 264.6153c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3135 2.9377 7.0987 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8065-21.8612-21.8613.0-6.0285 2.4516-11.492 6.4116-15.452C178.0482 267.0669 183.5117 264.6153 189.5403 264.6153zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9941.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.6366 290.6783 197.5344 288.6792 197.5344 286.4765z"/><g><defs><path id="SVGID_9_" d="M195.1881 292.1268c-1.4461 1.4461-3.4452 2.3439-5.6479 2.3439-4.4077-.0024-7.9918-3.5865-7.9942-7.9942.0024-4.4125 3.5937-7.9989 7.9942-7.9941 2.8443.0 5.497 1.5323 6.924 3.9983.6991 1.2067 1.0702 2.5881 1.0702 3.9959C197.5344 288.6792 196.6366 290.6783 195.1881 292.1268z"/></defs><clipPath id="SVGID_10_"><use xlink:href="#SVGID_9_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_10_);fill:#fff" d="M190.5209 279.463c-4.4005-.0048-7.9918 3.5817-7.9942 7.9941.0011 1.9547.7088 3.7452 1.8782 5.1354-1.7446-1.4674-2.8575-3.6631-2.8588-6.1161.0024-4.4125 3.5936-7.999 7.9942-7.9941 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C194.239 280.164 192.4279 279.463 190.5209 279.463z"/><path style="opacity:.13;clip-path:url(#SVGID_10_);fill:#020202" d="M190.5209 279.463c-4.4005-.0048-7.9918 3.5817-7.9942 7.9941.0011 1.9547.7088 3.7452 1.8782 5.1354-1.7446-1.4674-2.8575-3.6631-2.8588-6.1161.0024-4.4125 3.5936-7.999 7.9942-7.9941 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C194.239 280.164 192.4279 279.463 190.5209 279.463z"/></g><g><defs><path id="SVGID_11_" d="M189.5403 264.6153c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3135 2.9377 7.0987 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8065-21.8612-21.8613.0-6.0285 2.4516-11.492 6.4116-15.452C178.0482 267.0669 183.5117 264.6153 189.5403 264.6153zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9941.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.6366 290.6783 197.5344 288.6792 197.5344 286.4765z"/></defs><clipPath id="SVGID_12_"><use xlink:href="#SVGID_11_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_12_);fill:#56a55c" d="M173.11 270.0439c-3.96 3.96-6.4116 9.4235-6.4116 15.452-.0024 12.0547 9.8066 21.8636 21.8613 21.8613 12.0547.0024 21.8636-9.797 21.8613-21.8613.0024-3.8474-1.0151-7.6326-2.9353-10.9462-3.8977-6.7325-11.1497-10.9151-18.926-10.9151C182.5311 263.6346 177.0676 266.0863 173.11 270.0439z"/></g></g><rect x="199.3456" y="279.5436" style="fill:#56a55c" width="122.6266" height="13.8671"/></g><g><g><path style="fill:#f1bc42" d="M189.0874 318.7208l.0012-.0012c7.7751.0012 15.0295 4.1862 18.932 10.9234 1.9177 3.3159 2.9305 7.1011 2.9293 10.9378.0 5.8394-2.2733 11.3305-6.4032 15.4604-4.1288 4.1288-9.6186 6.4032-15.458 6.4032s-11.328-2.2733-15.458-6.4032-6.4032-9.6186-6.4056-15.4628c.0012-6.025 2.454-11.4897 6.4116-15.4472C177.5953 321.1724 183.0601 318.7196 189.0874 318.7208zm7.993 21.8576c.0012-1.4042-.3687-2.7868-1.063-3.9887-1.4293-2.4684-4.0833-3.9995-6.9299-4.0019-4.4077.0024-7.993 3.5877-7.993 7.993.0 2.1356.832 4.1431 2.3427 5.6539 1.5083 1.5083 3.5159 2.3403 5.6503 2.3415 2.1356.0 4.1443-.8308 5.6539-2.3403S197.0816 342.7176 197.0804 340.5784z"/><path style="opacity:.3;fill:#fff" d="M189.0898 318.7214c7.7763.0 15.0283 4.1826 18.926 10.915 1.9201 3.3136 2.9377 7.0988 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8612-12.0547.0024-21.8636-9.8065-21.8612-21.8612.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 321.173 183.0612 318.7214 189.0898 318.7214zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 344.7844 197.0839 342.7853 197.0839 340.5826z"/><g><defs><path id="SVGID_13_" d="M194.7376 346.2329c-1.4461 1.4461-3.4452 2.3439-5.6479 2.3439-4.4077-.0024-7.9918-3.5865-7.9942-7.9942.0024-4.4125 3.5937-7.999 7.9942-7.9942 2.8443.0 5.497 1.5323 6.924 3.9983.6991 1.2067 1.0702 2.5881 1.0702 3.9959C197.0839 342.7853 196.1861 344.7844 194.7376 346.2329z"/></defs><clipPath id="SVGID_14_"><use xlink:href="#SVGID_13_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_14_);fill:#fff" d="M190.0704 333.5691c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9547.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.6631-2.8588-6.1161.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0834 6.1218 2.8788C193.7885 334.2701 191.9774 333.5691 190.0704 333.5691z"/><path style="opacity:.13;clip-path:url(#SVGID_14_);fill:#020202" d="M190.0704 333.5691c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9547.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.6631-2.8588-6.1161.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0834 6.1218 2.8788C193.7885 334.2701 191.9774 333.5691 190.0704 333.5691z"/></g><g><defs><path id="SVGID_15_" d="M189.0898 318.7214c7.7763.0 15.0283 4.1826 18.926 10.915 1.9201 3.3136 2.9377 7.0988 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8612-12.0547.0024-21.8636-9.8065-21.8612-21.8612.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 321.173 183.0612 318.7214 189.0898 318.7214zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 344.7844 197.0839 342.7853 197.0839 340.5826z"/></defs><clipPath id="SVGID_16_"><use xlink:href="#SVGID_15_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_16_);fill:#f1bc42" d="M172.6595 324.15c-3.96 3.96-6.4116 9.4235-6.4116 15.452-.0024 12.0547 9.8066 21.8636 21.8613 21.8612 12.0547.0024 21.8636-9.797 21.8613-21.8612.0024-3.8474-1.0151-7.6327-2.9353-10.9462-3.8977-6.7324-11.1497-10.9151-18.926-10.9151C182.0806 317.7407 176.6171 320.1924 172.6595 324.15z"/></g></g><rect x="198.8952" y="333.6497" style="fill:#f1bc42" width="122.6266" height="13.8671"/></g></g></svg></span><span class="font-weight-bold">Codingtd学习笔记</span>
+	</a>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				
+				
+				<a class="nav-link active" href="/docs.html" ><i class='fas fa-book'></i><span class="active">学习笔记</span></a>
+			</li>
+			
+			
+			
+		</ul>
+	</div>
+	<div class="navbar-nav d-none d-lg-block">
+<input type="search" class="form-control td-search-input" placeholder="&#xf002; 站内搜索…" aria-label="站内搜索…" autocomplete="off">
+
+</div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+          </div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+          </div>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            
+
+
+
+
+<div class="td-content">
+<div class="pageinfo pageinfo-primary d-print-none">
+<p>
+这是本节的多页打印视图。
+<a href="#" onclick="print();return false;">点击此处打印</a>.
+</p><p>
+<a href="/docs.html">返回本页常规视图</a>.
+</p>
+</div>
+
+
+
+<h1 class="title">Learning devops</h1>
+<div class="lead">学习笔记</div>
+
+
+
+
+    <ul>
+    
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>1: <a href="#pg-d1742b0a409facb9dc9b2828826c6df3">介绍</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>1.1: <a href="#pg-8c6f5c9c10c9d7ba367d86cef17221a7">Hugo介绍</a></li>
+
+
+    
+  
+    
+    
+	
+<li>1.2: <a href="#pg-73e362fa528b19192fa9cc942974607a">为什么选择Hugo</a></li>
+
+
+    
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>2: <a href="#pg-273a1d3f87830cbffaaf95a64d1ab7e6">安装</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>2.1: <a href="#pg-ff6a27f541a188156f2518cc2a68b350">安装Hugo</a></li>
+
+
+    
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>3: <a href="#pg-be0cd6739aeeaa0215c16a2c1b1fead6">主题</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>3.1: <a href="#pg-e894c627a22105c8fefa20808ec2d8ee">docsy主题</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>3.1.1: <a href="#pg-adb43889424ce364319ce17879e9e319">本地化加速</a></li>
+
+
+    
+  
+    
+    
+	
+<li>3.1.2: <a href="#pg-31190499a73ee75b4d682a427457500e">搭建站点</a></li>
+
+
+    
+  
+
+    </ul>
+    
+  
+
+    </ul>
+    
+  
+
+    </ul>
+
+
+<div class="content">
+      
+</div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-d1742b0a409facb9dc9b2828826c6df3">1 - 介绍</h1>
+    <div class="lead">Hugo的介绍，选择Hugo的理由，以及Hugo的资料收集</div>
+	
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-8c6f5c9c10c9d7ba367d86cef17221a7">1.1 - Hugo介绍</h1>
+    <div class="lead">Hugo是什么？Hugo可以用来做什么？</div>
+	
+
+<div class="pageinfo pageinfo-primary">
+<p>静态网站生成器，专注内容，快速创作。</p>
+
+</div>
+
+<p><img src="images/hugo-logo.png" alt=""></p>
+<h2 id="hugo是什么">Hugo是什么？</h2>
+<p>Hugo是由Go语言实现的静态网站生成器。简单、易用、高效、易扩展、快速部署。</p>
+<p>Hugo以速度快著称，号称是世界上最快的网站生成框架。</p>
+<p><strong>The world’s fastest framework for building websites</strong></p>
+<p><img src="images/hugo-icon-big.png" alt=""></p>
+<h2 id="hugo可以用来做什么">Hugo可以用来做什么？</h2>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-73e362fa528b19192fa9cc942974607a">1.2 - 为什么选择Hugo</h1>
+    <div class="lead">为什么我选择了Hugo，而放弃了gitbook/hexo？</div>
+	
+
+<div class="pageinfo pageinfo-primary">
+<p>非常重要的额外理由：找到了两个很喜欢的主题 academic 和 docsy，分别用于技术博客网站和学习笔记</p>
+
+</div>
+
+<h2 id="hugo的特点">Hugo的特点</h2>
+<p>Hugo以速度快著称，号称是世界上最快的网站生成框架。</p>
+<p><strong>The world’s fastest framework for building websites</strong></p>
+<p><img src="images/hugo-icon-big.png" alt=""></p>
+<h3 id="来自1password的评价">来自1Password的评价</h3>
+<p>这里有一段来自1Password的对hugo的评价，很有代表性。</p>
+<blockquote>
+<p>内容翻译自  <a href="https://gohugo.io/showcase/1password-support/">https://gohugo.io/showcase/1password-support/</a></p>
+</blockquote>
+<p>在1Password，我们过去每个月都会经历一个不同的文档平台：博客引擎，电子书，维基，用Ruby和JavaScript编写的网站生成器。 每个方式都有自己的不足。然后我们找到了hugo。我们做了最后一次切换，我们很高兴我们做到了。</p>
+<p><strong>并非所有静态站点生成器都是相同的</strong></p>
+<p>找到一个能让您的客户，作者，设计师和DevOps团队满意的工具并非易事，但我们通过Hugo进行了管理：</p>
+<ul>
+<li>
+<p><strong>Hugo是静态的</strong>。我们是一家安全公司，所以我们坚持静态网站并尽可能地使用它们。我们觉得客户在HTML文件上比在需要强化的复杂服务器上更安全。</p>
+</li>
+<li>
+<p><strong>Hugo是基于Go的</strong>。在1Password我们喜欢Go编程语言，我们很高兴得知Hugo使用了我们的设计师和前端开发人员已经掌握的相同的Go模板语法。</p>
+</li>
+<li>
+<p><strong>Hugo很快</strong>。我们以前的静态站点生成器花费将近一分钟来编译我们的（那时还小得多）站点。开发人员可能已经习惯了这一点，但对于希望看到工作实时预览的作家来说，这并不合适。Hugo在几毫秒内完成了同样的工作，到现在，转瞬之间就可以编译五种语言编写的400多个页面。</p>
+</li>
+<li>
+<p><strong>Hugo很灵活</strong>。感谢Hugo的内容和布局系统，我们能够保留现有的文件和文件夹结构，并在几天内移植整个生产站点。然后我们可以创建以前不可能的新内容类型，比如这些时髦的陈列柜。</p>
+</li>
+<li>
+<p><strong>Hugo非常适合作家</strong>。我们的文档团队已经对Markdown和Git感到满意，并且可以开始为Hugo创建内容而无需停顿。一旦我们添加了短代码，我们的作者就可以通过少量的新语法来使用类似平台盒(platform boxes)的功能来装饰文章。</p>
+</li>
+<li>
+<p><strong>Hugo有一个惊人的开发者社区</strong>。Hugo更新频繁，充满了功能和修复。在我们开发网站的多语言版本时，我们提交了所需功能的PR，并通过@bep和其他人的流程得到了帮助。</p>
+</li>
+<li>
+<p><strong>Hugo易于部署</strong>。 Hugo拥有适量的配置选项，可以适应我们的构建系统而不会太复杂。</p>
+</li>
+</ul>
+<h2 id="我的个人感受">我的个人感受</h2>
+<h3 id="个人技术博客网站的变迁">个人技术博客网站的变迁</h3>
+<p>我的个人技术博客网站，十几年来经历过很多变更，从csdn，blogjava，javaeye，hexo+github page，gitbook一路走来，在2018年2月，开始转换到hugo，迄今整三年。</p>
+<p>这些年博客的历程，有兴趣了解的同学可以看看我在2018年改用hugo时写的文章：<a href="https://skyao.io/post/201802-getting-started/">十年一觉扬州梦，赢得青楼薄幸名</a></p>
+<p><img src="images/hugo-logo-black.png" alt=""></p>
+<p>目前的博客网站使用了自行修改订制之后的 academic 主题，非常满意，点击 <a href="https://skyao.io">这里</a> 可以看到实际效果。</p>
+<h3 id="学习笔记">学习笔记</h3>
+<p>而现在这份Hugo学习笔记则采用的是定制版本的 Google Docsy 主题，后续会将目前大大小小的四五十份学习笔记逐步迁移到 Hugo+Docsy 上来。</p>
+<p>对于hugo，个人非常喜爱，上面1Password列出的几点都感同身受。仅从个人感受上说，我觉得hugo优势主要体现在以下方面：</p>
+<ol>
+<li><strong>静态文件生成</strong>：生成纯静态文件，可以任意找地方托管，无任何特殊依赖。免费的github pages，廉价的虚拟主机，廉价的VPS，都可以轻松完成网站托管。</li>
+<li><strong>markdown编写</strong>：这是至关重要的一点，在习惯了markdown高效而专注的写作体验之后，markdown的支持成为硬性要求。</li>
+<li><strong>使用方便</strong>：无论是偏公共性质的技术博客，还是偏私人性质的学习笔记，从内容创作或者学习心得记录的角度，都是“内容为王”！因此，一个样式简单大方的网站，在一次性的安装调试完成之后，后续就应该可以轻松快捷的进行内容创作。</li>
+<li><strong>速度！</strong>：仅以上述三点而言，hexo和gitbook都表现的很好，两者的功能和主题都非常的丰富。但是，hugo在渲染速度上明显高出太多，尤其是对比gitbook，几乎有几十上百倍的性能差距。当站点内容比较多，比如积攒了几年的博客，或者大量细节展开的学习笔记，gitbook的渲染速度就开始从秒级到十几秒再到分钟级，而变得越来越不可接受。Hugo的速度，是我最终放弃hexo和gitbook的最关键的原因。</li>
+<li><strong>Go语言</strong>：这是讨人喜欢的一点，当然这会因人而异，nodejs的同学可能更愿意用gitbook。仅从个人感受上说，我对基于go的hugo好感更多。</li>
+<li><strong>喜欢的主题</strong>：对于hexo、gitbook、hugo，都拥有数以千计的各式主题。而要在众多主题中找到自己的心头好，有时需要一点运气。我自我感觉比较幸运的是：我找到了两个很喜欢的主题，academic 和 docsy，分别用于我的技术博客网站和学习笔记。特点是简单大气，简洁大方，不花俏，不土气，精致而内敛。有特别喜欢的主题，是一个关键的决策依据。</li>
+</ol>
+
+</div>
+
+
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-273a1d3f87830cbffaaf95a64d1ab7e6">2 - 安装</h1>
+    <div class="lead">介绍Hugo的安装，使用，配置和优化</div>
+	
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-ff6a27f541a188156f2518cc2a68b350">2.1 - 安装Hugo</h1>
+    <div class="lead">Hugo在多个操作系统下的安装</div>
+	<h2 id="准备工作">准备工作</h2>
+<h3 id="安装golang">安装golang</h3>
+<p>安装hugo之前，先安装好golang，推荐安装最新版本。</p>
+<h3 id="安装nodejsnpm">安装nodejs/npm</h3>
+<p>为了使用Google Docsy主题，需要安装nodejs/npm。</p>
+<p>在以下网站下载nodejs的安装包：</p>
+<p><a href="https://nodejs.org/en/download/">https://nodejs.org/en/download/</a></p>
+<h4 id="linux下安装nodejs">Linux下安装nodejs</h4>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wget https://nodejs.org/dist/v18.12.0/node-v18.12.0-linux-x64.tar.xz
+</span></span><span style="display:flex;"><span>tar xvf node-v18.12.0-linux-x64.tar.xz
+</span></span><span style="display:flex;"><span>sudo mv node-v18.12.0-linux-x64 /usr/share/nodejs
+</span></span></code></pre></div><p>打开 <code>~/.zshrc</code>, 添加下来内容,将 <code>/usr/share/nodejs/bin</code> 加入PATH 路径:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#204a87">export</span> <span style="color:#000">PATH</span><span style="color:#ce5c00;font-weight:bold">=</span>/usr/share/nodejs/bin:<span style="color:#000">$PATH</span>
+</span></span></code></pre></div><p>完成之后执行version命令检验是否安装成功：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#204a87">source</span> ~/.zshrc
+</span></span><span style="display:flex;"><span>npm --version
+</span></span></code></pre></div><p>注意这里一定要将 <code>/usr/share/nodejs/bin</code> 加入到 PATH，不然后面安装其他内容后使用时会报错找不到命令，因为通常新安装的命令都会放在 <code>/usr/share/nodejs/bin</code></p>
+<h2 id="安装hugo">安装Hugo</h2>
+<p>在<a href="https://github.com/spf13/hugo/releases">Hugo Releases</a>页面下载对应操作系统版本的安装包。</p>
+<p>注意：由于Google Docsy主题的需求，需要 extended 版本的hugo 以支持 SCSS:</p>
+<p><img src="images/hugo-extended-version.jpg" alt=""></p>
+<h3 id="linux安装">Linux安装</h3>
+<p>找到linux的安装包，对于 ubuntu 可以直接用 deb 文件：</p>
+<ul>
+<li>hugo_extended_0.105.0_linux-amd64.deb</li>
+</ul>
+<p>deb文件直接安装即可。</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo dpkg -i hugo_extended_0.105.0_linux-amd64.deb
+</span></span></code></pre></div><h3 id="mac安装">Mac安装</h3>
+<p>mac 下安装最简单的方式是用brew命令，但不合适用来安装extended版本，所以还是需要下载之后手工安装，如下载下列文件：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hugo_extended_0.80.0_macOS-64bit.tar.gz
+</span></span></code></pre></div><p>解压后，将 hugo 可执行文件放在path路径下即可：</p>
+<pre tabindex="0"><code>cd hugo_extended_0.80.0_macOS-64bit
+sudo cp hugo /usr/local/bin/hugo
+# 如果想多个hugo版本共存，可以将hugo二进制文件改名
+sudo cp hugo /usr/local/bin/hugo2
+</code></pre><h3 id="windows安装">Windows安装</h3>
+<p>TODO：暂未尝试，待更新。</p>
+<h3 id="安装后设置">安装后设置</h3>
+<p>验证安装：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ hugo version
+</span></span><span style="display:flex;"><span>hugo v0.105.0-0e3b42b4a9bdeb4d866210819fc6ddcf51582ffa+extended linux/amd64 <span style="color:#000">BuildDate</span><span style="color:#ce5c00;font-weight:bold">=</span>2022-10-28T12:29:05Z <span style="color:#000">VendorInfo</span><span style="color:#ce5c00;font-weight:bold">=</span>gohugoio
+</span></span></code></pre></div><p>为了方便使用，增加hugo server 命令的 alias 用来本地编辑时的实时预览：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>vi ~/.zshrc
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># hugo</span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87">alias</span> <span style="color:#000">h</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#39;hugo -D -F server --disableFastRender --bind &#34;0.0.0.0&#34;&#39;</span>
+</span></span></code></pre></div><p>hugo命令行参数说明：</p>
+<ul>
+<li><code>-D</code>:  等同<code>--buildDrafts</code>，标记为 Draft 的内容也会一起构建，方便在本地编写和预览新的暂时未发布的内容。</li>
+<li><code>-F</code>:  等同<code>--buildFuture</code>，发布时间为&quot;未来&quot;(即时间比当前时间还要晚)内容也会一起构建，方便在本地编写和预览新的暂时未发布的内容。</li>
+<li><code>--disableFastRender</code>：当内容修改时，进行完整的重新构建，避免预览的内容不够新</li>
+</ul>
+<h2 id="安装scss">安装SCSS</h2>
+<p>SCSS的安装参考 docsy 的文档：</p>
+<p><a href="https://www.docsy.dev/docs/getting-started/#install-postcss">https://www.docsy.dev/docs/getting-started/#install-postcss</a></p>
+<p>首先需要安装 nodejs，这样才能使用 npm 命令，然后在hugo项目下执行：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>% npm install -D --save autoprefixer
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>+ autoprefixer@9.8.6
+</span></span><span style="display:flex;"><span>added <span style="color:#0000cf;font-weight:bold">115</span> packages from <span style="color:#0000cf;font-weight:bold">112</span> contributors and audited <span style="color:#0000cf;font-weight:bold">115</span> packages in 12.974s
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>% npm install -D --save postcss-cli
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>+ postcss-cli@7.1.2
+</span></span><span style="display:flex;"><span>added <span style="color:#0000cf;font-weight:bold">1</span> package from <span style="color:#0000cf;font-weight:bold">1</span> contributor, removed <span style="color:#0000cf;font-weight:bold">1</span> package, updated <span style="color:#0000cf;font-weight:bold">18</span> packages and audited <span style="color:#0000cf;font-weight:bold">115</span> packages in 39.211s
+</span></span></code></pre></div><h2 id="自动发布">自动发布</h2>
+<p>以下是jenkins自动生成并发布到nginx的简单脚本：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sh update_academic.sh
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># clean </span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87">cd</span> /var/www/skyao/
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># 删除所有文件和文件夹，但排除以&#34;learning-&#34;前缀开头的</span>
+</span></span><span style="display:flex;"><span>rm -rf <span style="color:#4e9a06">`</span>ls <span style="color:#000;font-weight:bold">|</span> grep -v <span style="color:#4e9a06">&#34;learning-&#34;</span><span style="color:#4e9a06">`</span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87">cd</span> /var/lib/jenkins/workspace/skyao.io/
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># 需要明确指定baseUrl</span>
+</span></span><span style="display:flex;"><span>hugo --baseUrl<span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;https://skyao.io/&#34;</span> -d <span style="color:#4e9a06">&#34;/var/www/skyao/&#34;</span>
+</span></span></code></pre></div>
+</div>
+
+
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-be0cd6739aeeaa0215c16a2c1b1fead6">3 - 主题</h1>
+    <div class="lead">介绍hugo的主题，个人推荐列表，及重度使用的academic和docsy主题</div>
+	
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-e894c627a22105c8fefa20808ec2d8ee">3.1 - docsy主题</h1>
+    <div class="lead">介绍hugo的docsy主题，使用方式和订制化</div>
+	
+
+<div class="pageinfo pageinfo-primary">
+<p>docsy主题非常适合用于开源项目，支持文档和博客。我主要用它来做学习笔记，替代年旧失修的meterial-docs主题。</p>
+
+</div>
+
+<h2 id="主题介绍">主题介绍</h2>
+<p>docsy 主题官网：</p>
+<p><a href="https://github.com/google/docsy">https://github.com/google/docsy</a></p>
+<p>这个主题非常适合用于开源项目，支持文档和博客。</p>
+<p>我主要用它来做学习笔记，自行修改和定制。</p>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-adb43889424ce364319ce17879e9e319">3.1.1 - 本地化加速</h1>
+    <div class="lead">将docsy主题的静态文件本地化来加速装载速度避免被墙</div>
+	
+
+<div class="pageinfo pageinfo-primary">
+<p>在国内网络环境的实际情况下，静态文件的装载速度非常慢，有些甚至被墙，导致页面访问困难，此时需要做本地化</p>
+
+</div>
+
+<h3 id="静态文件本地化的背景">静态文件本地化的背景</h3>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-31190499a73ee75b4d682a427457500e">3.1.2 - 搭建站点</h1>
+    <div class="lead">搭建基于docsy主题的站点</div>
+	
+
+<div class="pageinfo pageinfo-primary">
+<p>git submodule方式在项目比较多时不方便，改用软链接</p>
+
+</div>
+
+<h3 id="安装hugo的extended版本">安装hugo的extended版本</h3>
+
+</div>
+
+
+
+    
+	
+  
+
+    
+	
+  
+
+    
+	
+  
+
+
+
+          </main>
+        </div>
+      </div>
+      
+<footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">&copy; 2022 codingtd.github.io All Rights Reserved</small>
+        <small class="ml-1"><a href="https://codingtd.github.io" target="_blank" rel="noopener">codingtd的博客</a></small>
+	
+      </div>
+    </div>
+  </div>
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?17048c9d4209e5d08a9ae5b0b4160808";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+</footer>
+
+
+    </div>
+    <script src="/local/cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="/local/cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+
+
+
+
+
+<script src='/js/deflate.js'></script>
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+<script src="/js/main.min.2e86b3e29f3ec986f67b01405d812e9bcb79deff06d8d2ef626a30ee3a0a7cd8.js" integrity="sha256-Loaz4p8&#43;yYb2ewFAXYEum8t53v8G2NLvYmow7joKfNg=" crossorigin="anonymous"></script>
+
+
+
+<script src='/js/prism.js'></script>
+
+
+
+  </body>
+</html>
