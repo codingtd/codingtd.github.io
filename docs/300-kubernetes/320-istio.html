@@ -3,7 +3,8 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.106.0"><META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+<meta name="generator" content="Hugo 0.106.0"><link rel="alternate" type="text/html" href="http://codingtd.github.io/docs/300-kubernetes/320-istio/_print.html">
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
 
 <link rel="shortcut icon" href="/favicons/favicon.ico" >
@@ -17,23 +18,18 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>本地化加速 | Codingtd学习笔记</title>
-<meta name="description" content="Codingtd学习笔记"><meta property="og:title" content="本地化加速" />
-<meta property="og:description" content="将docsy主题的静态文件本地化来加速装载速度避免被墙
+<title>Istio | Codingtd学习笔记</title>
+<meta name="description" content="Codingtd学习笔记"><meta property="og:title" content="Istio" />
+<meta property="og:description" content="Istio学习及实战笔记 // TODO
 " />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="http://codingtd.github.io/docs/theme/docsy/local.html" /><meta property="article:section" content="docs" />
-<meta property="article:published_time" content="2021-01-19T00:00:00+00:00" />
-<meta property="article:modified_time" content="2021-01-19T00:00:00+00:00" /><meta property="og:site_name" content="Codingtd学习笔记" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://codingtd.github.io/docs/300-kubernetes/320-istio.html" /><meta property="og:site_name" content="Codingtd学习笔记" />
 
-<meta itemprop="name" content="本地化加速">
-<meta itemprop="description" content="将docsy主题的静态文件本地化来加速装载速度避免被墙
-"><meta itemprop="datePublished" content="2021-01-19T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2021-01-19T00:00:00+00:00" />
-<meta itemprop="wordCount" content="2">
-<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="本地化加速"/>
-<meta name="twitter:description" content="将docsy主题的静态文件本地化来加速装载速度避免被墙
+<meta itemprop="name" content="Istio">
+<meta itemprop="description" content="Istio学习及实战笔记 // TODO
+"><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Istio"/>
+<meta name="twitter:description" content="Istio学习及实战笔记 // TODO
 "/>
 
 
@@ -57,7 +53,7 @@
 
 
   </head>
-  <body class="td-page">
+  <body class="td-section">
     <header>
       
 <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
@@ -140,8 +136,8 @@
   
 </li>
   </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docs300-kuberneteshtml-li">
-  <input type="checkbox" id="m-docs300-kuberneteshtml-check"/>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-docs300-kuberneteshtml-li">
+  <input type="checkbox" id="m-docs300-kuberneteshtml-check" checked/>
   <label for="m-docs300-kuberneteshtml-check"><a href="/docs/300-kubernetes.html" class="align-left pl-0  td-sidebar-link td-sidebar-link__section" id="m-docs300-kuberneteshtml"><span class="">Kubernetes</span></a></label>
   
   <ul class="ul-2 foldable">
@@ -151,23 +147,23 @@
   
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docs300-kubernetes320-istiohtml-li">
   <input type="checkbox" id="m-docs300-kubernetes320-istiohtml-check"/>
-  <label for="m-docs300-kubernetes320-istiohtml-check"><a href="/docs/300-kubernetes/320-istio.html" class="align-left pl-0  td-sidebar-link td-sidebar-link__section" id="m-docs300-kubernetes320-istiohtml"><span class="">Istio</span></a></label>
+  <label for="m-docs300-kubernetes320-istiohtml-check"><a href="/docs/300-kubernetes/320-istio.html" class="align-left pl-0  active td-sidebar-link td-sidebar-link__section" id="m-docs300-kubernetes320-istiohtml"><span class="td-sidebar-nav-active-item">Istio</span></a></label>
   
 </li>
   </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-docsthemehtml-li">
-  <input type="checkbox" id="m-docsthemehtml-check" checked/>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsthemehtml-li">
+  <input type="checkbox" id="m-docsthemehtml-check"/>
   <label for="m-docsthemehtml-check"><a href="/docs/theme.html" class="align-left pl-0  td-sidebar-link td-sidebar-link__section" id="m-docsthemehtml"><span class="">主题</span></a></label>
   
   <ul class="ul-2 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-docsthemedocsyhtml-li">
-  <input type="checkbox" id="m-docsthemedocsyhtml-check" checked/>
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsthemedocsyhtml-li">
+  <input type="checkbox" id="m-docsthemedocsyhtml-check"/>
   <label for="m-docsthemedocsyhtml-check"><a href="/docs/theme/docsy.html" class="align-left pl-0  td-sidebar-link td-sidebar-link__section" id="m-docsthemedocsyhtml"><span class="">docsy主题</span></a></label>
   
   <ul class="ul-3 foldable">
     <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsthemedocsylocalhtml-li">
   <input type="checkbox" id="m-docsthemedocsylocalhtml-check"/>
-  <label for="m-docsthemedocsylocalhtml-check"><a href="/docs/theme/docsy/local.html" class="align-left pl-0  active td-sidebar-link td-sidebar-link__page" id="m-docsthemedocsylocalhtml"><span class="td-sidebar-nav-active-item">本地化加速</span></a></label>
+  <label for="m-docsthemedocsylocalhtml-check"><a href="/docs/theme/docsy/local.html" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-docsthemedocsylocalhtml"><span class="">本地化加速</span></a></label>
   
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsthemedocsysetuphtml-li">
   <input type="checkbox" id="m-docsthemedocsysetuphtml-check"/>
@@ -206,9 +202,9 @@
     
     
 
-    <a href="https://github.com/codingtd/learning-ops/edit/master/content/zh/docs/theme/docsy/local.md" target="_blank"><i class="fa fa-edit fa-fw"></i> 编辑此页</a>
-    <a href="https://github.com/codingtd/learning-ops/new/master/content/zh/docs/theme/docsy/local.md?filename=change-me.md&amp;value=---%0Atitle%3A&#43;%22Long&#43;Page&#43;Title%22%0AlinkTitle%3A&#43;%22Short&#43;Nav&#43;Title%22%0Aweight%3A&#43;100%0Adescription%3A&#43;%3E-%0A&#43;&#43;&#43;&#43;&#43;Page&#43;description&#43;for&#43;heading&#43;and&#43;indexes.%0A---%0A%0A%23%23&#43;Heading%0A%0AEdit&#43;this&#43;template&#43;to&#43;create&#43;your&#43;new&#43;page.%0A%0A%2A&#43;Give&#43;it&#43;a&#43;good&#43;name%2C&#43;ending&#43;in&#43;%60.md%60&#43;-&#43;e.g.&#43;%60getting-started.md%60%0A%2A&#43;Edit&#43;the&#43;%22front&#43;matter%22&#43;section&#43;at&#43;the&#43;top&#43;of&#43;the&#43;page&#43;%28weight&#43;controls&#43;how&#43;its&#43;ordered&#43;amongst&#43;other&#43;pages&#43;in&#43;the&#43;same&#43;directory%3B&#43;lowest&#43;number&#43;first%29.%0A%2A&#43;Add&#43;a&#43;good&#43;commit&#43;message&#43;at&#43;the&#43;bottom&#43;of&#43;the&#43;page&#43;%28%3C80&#43;characters%3B&#43;use&#43;the&#43;extended&#43;description&#43;field&#43;for&#43;more&#43;detail%29.%0A%2A&#43;Create&#43;a&#43;new&#43;branch&#43;so&#43;you&#43;can&#43;preview&#43;your&#43;new&#43;file&#43;and&#43;request&#43;a&#43;review&#43;via&#43;Pull&#43;Request.%0A" target="_blank"><i class="fa fa-edit fa-fw"></i> 添加子页面</a>
-    <a href="https://github.com/codingtd/learning-ops/issues/new?title=%e6%9c%ac%e5%9c%b0%e5%8c%96%e5%8a%a0%e9%80%9f" target="_blank"><i class="fab fa-github fa-fw"></i> 提交文档问题</a>
+    <a href="https://github.com/codingtd/learning-ops/edit/master/content/zh/docs/300-Kubernetes/320-Istio/_index.md" target="_blank"><i class="fa fa-edit fa-fw"></i> 编辑此页</a>
+    <a href="https://github.com/codingtd/learning-ops/new/master/content/zh/docs/300-Kubernetes/320-Istio/_index.md?filename=change-me.md&amp;value=---%0Atitle%3A&#43;%22Long&#43;Page&#43;Title%22%0AlinkTitle%3A&#43;%22Short&#43;Nav&#43;Title%22%0Aweight%3A&#43;100%0Adescription%3A&#43;%3E-%0A&#43;&#43;&#43;&#43;&#43;Page&#43;description&#43;for&#43;heading&#43;and&#43;indexes.%0A---%0A%0A%23%23&#43;Heading%0A%0AEdit&#43;this&#43;template&#43;to&#43;create&#43;your&#43;new&#43;page.%0A%0A%2A&#43;Give&#43;it&#43;a&#43;good&#43;name%2C&#43;ending&#43;in&#43;%60.md%60&#43;-&#43;e.g.&#43;%60getting-started.md%60%0A%2A&#43;Edit&#43;the&#43;%22front&#43;matter%22&#43;section&#43;at&#43;the&#43;top&#43;of&#43;the&#43;page&#43;%28weight&#43;controls&#43;how&#43;its&#43;ordered&#43;amongst&#43;other&#43;pages&#43;in&#43;the&#43;same&#43;directory%3B&#43;lowest&#43;number&#43;first%29.%0A%2A&#43;Add&#43;a&#43;good&#43;commit&#43;message&#43;at&#43;the&#43;bottom&#43;of&#43;the&#43;page&#43;%28%3C80&#43;characters%3B&#43;use&#43;the&#43;extended&#43;description&#43;field&#43;for&#43;more&#43;detail%29.%0A%2A&#43;Create&#43;a&#43;new&#43;branch&#43;so&#43;you&#43;can&#43;preview&#43;your&#43;new&#43;file&#43;and&#43;request&#43;a&#43;review&#43;via&#43;Pull&#43;Request.%0A" target="_blank"><i class="fa fa-edit fa-fw"></i> 添加子页面</a>
+    <a href="https://github.com/codingtd/learning-ops/issues/new?title=Istio" target="_blank"><i class="fab fa-github fa-fw"></i> 提交文档问题</a>
     
       
       <a href="https://github.com/codingtd/learning-ops/issues/new" target="_blank"><i class="fas fa-tasks fa-fw"></i> 提交项目问题</a>
@@ -216,7 +212,7 @@
 
   
   
-    <a id="print" href="http://codingtd.github.io/docs/theme/docsy/_print.html"><i class="fa fa-print fa-fw"></i> 整节打印</a>
+    <a id="print" href="http://codingtd.github.io/docs/300-kubernetes/320-istio/_print.html"><i class="fa fa-print fa-fw"></i> 整节打印</a>
   
   </div>
 
@@ -264,9 +260,6 @@
 
 
 
-
-
-
 <li class="breadcrumb-item" >
 	<a href="http://codingtd.github.io/docs.html">学习笔记</a>
 </li>
@@ -275,21 +268,14 @@
 
 
 <li class="breadcrumb-item" >
-	<a href="http://codingtd.github.io/docs/theme.html">主题</a>
-</li>
-
-
-
-
-<li class="breadcrumb-item" >
-	<a href="http://codingtd.github.io/docs/theme/docsy.html">docsy主题</a>
+	<a href="http://codingtd.github.io/docs/300-kubernetes.html">Kubernetes</a>
 </li>
 
 
 
 
 <li class="breadcrumb-item active" aria-current="page">
-	<a href="http://codingtd.github.io/docs/theme/docsy/local.html">本地化加速</a>
+	<a href="http://codingtd.github.io/docs/300-kubernetes/320-istio.html">Istio</a>
 </li>
 
 	</ol>
@@ -297,8 +283,8 @@
 
             
 <div class="td-content">
-	<h1>本地化加速</h1>
-	<div class="lead">将docsy主题的静态文件本地化来加速装载速度避免被墙</div>
+	<h1>Istio</h1>
+  <div class="lead">Istio学习及实战笔记 // TODO</div>
 	<header class="article-meta">
 		
 		
@@ -313,15 +299,17 @@
 			
 		
 		
-	</header>    
+	</header>
 	
-
-<div class="pageinfo pageinfo-primary">
-<p>在国内网络环境的实际情况下，静态文件的装载速度非常慢，有些甚至被墙，导致页面访问困难，此时需要做本地化</p>
-
+        <div class="section-index">
+    
+    
+    
+    
+    
+    
+    
 </div>
-
-<h3 id="静态文件本地化的背景">静态文件本地化的背景</h3>
 
 	
 	
@@ -330,7 +318,6 @@
 </div>
 
 </div>
-
 
           </main>
         </div>
