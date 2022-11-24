@@ -8,7 +8,7 @@
     <loc>http://codingtd.github.io/docs/100-linuxsystemmanagement.html</loc>
     <lastmod>2022-11-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://codingtd.github.io/docs/100-linuxsystemmanagement/installation.html</loc>
+    <loc>http://codingtd.github.io/docs/100-linuxsystemmanagement/elasticsearch.html</loc>
     <lastmod>2022-11-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://codingtd.github.io/docs/200-devops.html</loc>
@@ -27,16 +27,7 @@
   </url><url>
     <loc>http://codingtd.github.io/docs/300-kubernetes/320-istio.html</loc>
   </url><url>
-    <loc>http://codingtd.github.io/docs/theme/docsy.html</loc>
-    <lastmod>2021-01-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://codingtd.github.io/docs/theme/docsy/local.html</loc>
-    <lastmod>2021-01-19T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://codingtd.github.io/docs/theme/docsy/setup.html</loc>
-    <lastmod>2021-01-19T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://codingtd.github.io/docs/theme.html</loc>
+    <loc>http://codingtd.github.io/docs/docsy.html</loc>
     <lastmod>2021-01-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://codingtd.github.io/</loc>

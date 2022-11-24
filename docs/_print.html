@@ -144,9 +144,20 @@
     
     
 	
-<li>1.1: <a href="#pg-10e5c33d881adf91defddf900330316c">安装Hugo</a></li>
+<li>1.1: <a href="#pg-df5803a671fbc3622a74505a0281d9d7">ElasticSearch</a></li>
 
 
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
     
   
 
@@ -278,7 +289,7 @@
     
     
 	
-<li>4: <a href="#pg-be0cd6739aeeaa0215c16a2c1b1fead6">主题</a></li>
+<li>4: <a href="#pg-3cb32ca61b49f1fe85017e767b0d7a4a">docsy主题</a></li>
 
 
     
@@ -289,41 +300,6 @@
   
   
 
-  
-    
-    
-	
-<li>4.1: <a href="#pg-e894c627a22105c8fefa20808ec2d8ee">docsy主题</a></li>
-
-
-    
-    <ul>
-        
-  
-  
-  
-  
-
-  
-    
-    
-	
-<li>4.1.1: <a href="#pg-adb43889424ce364319ce17879e9e319">本地化加速</a></li>
-
-
-    
-  
-    
-    
-	
-<li>4.1.2: <a href="#pg-31190499a73ee75b4d682a427457500e">搭建站点</a></li>
-
-
-    
-  
-
-    </ul>
-    
   
 
     </ul>
@@ -380,89 +356,24 @@
 
 <div class="td-content" style="">
     
-	<h1 id="pg-10e5c33d881adf91defddf900330316c">1.1 - 安装Hugo</h1>
-    <div class="lead">Hugo在多个操作系统下的安装</div>
-	<h2 id="准备工作">准备工作</h2>
-<h3 id="安装golang">安装golang</h3>
-<p>安装hugo之前，先安装好golang，推荐安装最新版本。</p>
-<h3 id="安装nodejsnpm">安装nodejs/npm</h3>
-<p>为了使用Google Docsy主题，需要安装nodejs/npm。</p>
-<p>在以下网站下载nodejs的安装包：</p>
-<p><a href="https://nodejs.org/en/download/">https://nodejs.org/en/download/</a></p>
-<h4 id="linux下安装nodejs">Linux下安装nodejs</h4>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wget https://nodejs.org/dist/v18.12.0/node-v18.12.0-linux-x64.tar.xz
-</span></span><span style="display:flex;"><span>tar xvf node-v18.12.0-linux-x64.tar.xz
-</span></span><span style="display:flex;"><span>sudo mv node-v18.12.0-linux-x64 /usr/share/nodejs
-</span></span></code></pre></div><p>打开 <code>~/.zshrc</code>, 添加下来内容,将 <code>/usr/share/nodejs/bin</code> 加入PATH 路径:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#204a87">export</span> <span style="color:#000">PATH</span><span style="color:#ce5c00;font-weight:bold">=</span>/usr/share/nodejs/bin:<span style="color:#000">$PATH</span>
-</span></span></code></pre></div><p>完成之后执行version命令检验是否安装成功：</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#204a87">source</span> ~/.zshrc
-</span></span><span style="display:flex;"><span>npm --version
-</span></span></code></pre></div><p>注意这里一定要将 <code>/usr/share/nodejs/bin</code> 加入到 PATH，不然后面安装其他内容后使用时会报错找不到命令，因为通常新安装的命令都会放在 <code>/usr/share/nodejs/bin</code></p>
-<h2 id="安装hugo">安装Hugo</h2>
-<p>在<a href="https://github.com/spf13/hugo/releases">Hugo Releases</a>页面下载对应操作系统版本的安装包。</p>
-<p>注意：由于Google Docsy主题的需求，需要 extended 版本的hugo 以支持 SCSS:</p>
-<p><img src="images/hugo-extended-version.jpg" alt=""></p>
-<h3 id="linux安装">Linux安装</h3>
-<p>找到linux的安装包，对于 ubuntu 可以直接用 deb 文件：</p>
-<ul>
-<li>hugo_extended_0.105.0_linux-amd64.deb</li>
-</ul>
-<p>deb文件直接安装即可。</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo dpkg -i hugo_extended_0.105.0_linux-amd64.deb
-</span></span></code></pre></div><h3 id="mac安装">Mac安装</h3>
-<p>mac 下安装最简单的方式是用brew命令，但不合适用来安装extended版本，所以还是需要下载之后手工安装，如下载下列文件：</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hugo_extended_0.80.0_macOS-64bit.tar.gz
-</span></span></code></pre></div><p>解压后，将 hugo 可执行文件放在path路径下即可：</p>
-<pre tabindex="0"><code>cd hugo_extended_0.80.0_macOS-64bit
-sudo cp hugo /usr/local/bin/hugo
-# 如果想多个hugo版本共存，可以将hugo二进制文件改名
-sudo cp hugo /usr/local/bin/hugo2
-</code></pre><h3 id="windows安装">Windows安装</h3>
-<p>TODO：暂未尝试，待更新。</p>
-<h3 id="安装后设置">安装后设置</h3>
-<p>验证安装：</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ hugo version
-</span></span><span style="display:flex;"><span>hugo v0.105.0-0e3b42b4a9bdeb4d866210819fc6ddcf51582ffa+extended linux/amd64 <span style="color:#000">BuildDate</span><span style="color:#ce5c00;font-weight:bold">=</span>2022-10-28T12:29:05Z <span style="color:#000">VendorInfo</span><span style="color:#ce5c00;font-weight:bold">=</span>gohugoio
-</span></span></code></pre></div><p>为了方便使用，增加hugo server 命令的 alias 用来本地编辑时的实时预览：</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>vi ~/.zshrc
-</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># hugo</span>
-</span></span><span style="display:flex;"><span><span style="color:#204a87">alias</span> <span style="color:#000">h</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#39;hugo -D -F server --disableFastRender --bind &#34;0.0.0.0&#34;&#39;</span>
-</span></span></code></pre></div><p>hugo命令行参数说明：</p>
-<ul>
-<li><code>-D</code>:  等同<code>--buildDrafts</code>，标记为 Draft 的内容也会一起构建，方便在本地编写和预览新的暂时未发布的内容。</li>
-<li><code>-F</code>:  等同<code>--buildFuture</code>，发布时间为&quot;未来&quot;(即时间比当前时间还要晚)内容也会一起构建，方便在本地编写和预览新的暂时未发布的内容。</li>
-<li><code>--disableFastRender</code>：当内容修改时，进行完整的重新构建，避免预览的内容不够新</li>
-</ul>
-<h2 id="安装scss">安装SCSS</h2>
-<p>SCSS的安装参考 docsy 的文档：</p>
-<p><a href="https://www.docsy.dev/docs/getting-started/#install-postcss">https://www.docsy.dev/docs/getting-started/#install-postcss</a></p>
-<p>首先需要安装 nodejs，这样才能使用 npm 命令，然后在hugo项目下执行：</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>% npm install -D --save autoprefixer
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>+ autoprefixer@9.8.6
-</span></span><span style="display:flex;"><span>added <span style="color:#0000cf;font-weight:bold">115</span> packages from <span style="color:#0000cf;font-weight:bold">112</span> contributors and audited <span style="color:#0000cf;font-weight:bold">115</span> packages in 12.974s
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>% npm install -D --save postcss-cli
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>+ postcss-cli@7.1.2
-</span></span><span style="display:flex;"><span>added <span style="color:#0000cf;font-weight:bold">1</span> package from <span style="color:#0000cf;font-weight:bold">1</span> contributor, removed <span style="color:#0000cf;font-weight:bold">1</span> package, updated <span style="color:#0000cf;font-weight:bold">18</span> packages and audited <span style="color:#0000cf;font-weight:bold">115</span> packages in 39.211s
-</span></span></code></pre></div><h2 id="自动发布">自动发布</h2>
-<p>以下是jenkins自动生成并发布到nginx的简单脚本：</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sh update_academic.sh
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># clean </span>
-</span></span><span style="display:flex;"><span><span style="color:#204a87">cd</span> /var/www/skyao/
-</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># 删除所有文件和文件夹，但排除以&#34;learning-&#34;前缀开头的</span>
-</span></span><span style="display:flex;"><span>rm -rf <span style="color:#4e9a06">`</span>ls <span style="color:#000;font-weight:bold">|</span> grep -v <span style="color:#4e9a06">&#34;learning-&#34;</span><span style="color:#4e9a06">`</span>
-</span></span><span style="display:flex;"><span><span style="color:#204a87">cd</span> /var/lib/jenkins/workspace/skyao.io/
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># 需要明确指定baseUrl</span>
-</span></span><span style="display:flex;"><span>hugo --baseUrl<span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;https://skyao.io/&#34;</span> -d <span style="color:#4e9a06">&#34;/var/www/skyao/&#34;</span>
-</span></span></code></pre></div>
+	<h1 id="pg-df5803a671fbc3622a74505a0281d9d7">1.1 - ElasticSearch</h1>
+    <div class="lead">ElasticSearch应用安装、配置和优化 // TODO</div>
+	
 </div>
 
 
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
 
     
 	
@@ -676,37 +587,12 @@ sudo cp hugo /usr/local/bin/hugo2
 
 <div class="td-content" style="page-break-before: always">
     
-	<h1 id="pg-be0cd6739aeeaa0215c16a2c1b1fead6">4 - 主题</h1>
-    <div class="lead">介绍hugo的主题，个人推荐列表，及重度使用的academic和docsy主题</div>
-	
-</div>
-
-
-
-    
-      
-  
-  
-  
-  
-
-  
-  
-
-  
-    
-    
-	
-    
-
-<div class="td-content" style="">
-    
-	<h1 id="pg-e894c627a22105c8fefa20808ec2d8ee">4.1 - docsy主题</h1>
+	<h1 id="pg-3cb32ca61b49f1fe85017e767b0d7a4a">4 - docsy主题</h1>
     <div class="lead">介绍hugo的docsy主题，使用方式和订制化</div>
 	
 
 <div class="pageinfo pageinfo-primary">
-<p>docsy主题非常适合用于开源项目，支持文档和博客。我主要用它来做学习笔记，替代年旧失修的meterial-docs主题。</p>
+<p>docsy主题非常适合用于开源项目，支持文档和博客。我主要用它来做学习笔记。</p>
 
 </div>
 
@@ -730,60 +616,6 @@ sudo cp hugo /usr/local/bin/hugo2
   
   
 
-  
-    
-    
-	
-    
-
-<div class="td-content" style="page-break-before: always">
-    
-	<h1 id="pg-adb43889424ce364319ce17879e9e319">4.1.1 - 本地化加速</h1>
-    <div class="lead">将docsy主题的静态文件本地化来加速装载速度避免被墙</div>
-	
-
-<div class="pageinfo pageinfo-primary">
-<p>在国内网络环境的实际情况下，静态文件的装载速度非常慢，有些甚至被墙，导致页面访问困难，此时需要做本地化</p>
-
-</div>
-
-<h3 id="静态文件本地化的背景">静态文件本地化的背景</h3>
-
-</div>
-
-
-
-    
-	
-  
-    
-    
-	
-    
-
-<div class="td-content" style="page-break-before: always">
-    
-	<h1 id="pg-31190499a73ee75b4d682a427457500e">4.1.2 - 搭建站点</h1>
-    <div class="lead">搭建基于docsy主题的站点</div>
-	
-
-<div class="pageinfo pageinfo-primary">
-<p>git submodule方式在项目比较多时不方便，改用软链接</p>
-
-</div>
-
-<h3 id="安装hugo的extended版本">安装hugo的extended版本</h3>
-
-</div>
-
-
-
-    
-	
-  
-
-    
-	
   
 
     
